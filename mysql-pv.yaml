@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 250Mi  # Définit la taille du volume
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain  # Politique de réclamation
+  storageClassName: manual  # Spécifiez la classe de stockage si nécessaire
+  hostPath:
+    path: "/mnt/data"  # Chemin vers l'emplacement sur l'hôte (modifiable selon vos besoins)
+

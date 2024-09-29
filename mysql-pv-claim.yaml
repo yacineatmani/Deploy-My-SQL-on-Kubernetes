@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi  # Taille demandée pour le PVC
+  storageClassName: manual  # Doit correspondre à la storageClass du PV si utilisée
+
